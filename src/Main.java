@@ -77,8 +77,9 @@ public class Main {
                     break;      //break used to exit for loop once the first vowel is found
                 }
                 //if input contains no vowels, such as "shy"
-                else if (!(userInput.charAt(i) == 'a') || (userInput.charAt(i) == 'e') || (userInput.charAt(i) == 'i') ||
-                        (userInput.charAt(i) == 'o') || (userInput.charAt(i) == 'u')) {
+                else if (userInput.charAt(i) == 'y' && (!((userInput.charAt(i) == 'a') || (userInput.charAt(i) == 'e')
+                        || (userInput.charAt(i) == 'i') || (userInput.charAt(i) == 'o') || (userInput.charAt(i) ==
+                        'u')))) {
                     if (casing) {
                         changedInput = changedInput.concat("AY");
                     }
