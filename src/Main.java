@@ -90,7 +90,7 @@ public class Main {
         else if (caseOfWord == caseOfWord.substring(0,1).toUpperCase()){
             casing = false;
         }
-        else {      //if input word is all Lowercase
+        else {      //if the input word is all Lowercase
             casing = false;
         }
         return casing;
