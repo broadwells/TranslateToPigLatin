@@ -24,7 +24,7 @@ public class Main {
                 }
             }
             //parseSentence method is called to find all whitespaces w/in the input & store the words inside an array
-            String[] userPrompt2 = parseSentence(userPrompt1);
+            String[] userPrompt2 = parseSentence(userPrompt1.trim());   //trimming off any leading/trailing spaces
             String finalOutput = "";
             for (String input : userPrompt2) {
                 casing = findCase(input);
@@ -74,7 +74,18 @@ public class Main {
                             changedInput = remainingInput + consonant + "ay";
                         }
                     }
-                    break;      //break used to exit for loop/if statement once the first vowel is found
+                    break;      //break used to exit for loop once the first vowel is found
+                }
+                //if input contains no vowels, such as "shy"
+                else if (!(userInput.charAt(i) == 'a') || (userInput.charAt(i) == 'e') || (userInput.charAt(i) == 'i') ||
+                        (userInput.charAt(i) == 'o') || (userInput.charAt(i) == 'u')) {
+                    if (casing) {
+                        changedInput = changedInput.concat("AY");
+                    }
+                    else {
+                        changedInput = changedInput.concat("ay");
+                    }
+                    break;  //exits for loop once "ay" has been added to the input word(s)
                 }
             }
         }
@@ -98,7 +109,7 @@ public class Main {
     //separating the words from whitespaces and placing in an array
     public static String[] parseSentence(String userInput) {
         String[] wordsFromInput;
-        wordsFromInput = userInput.split(" ");
+        wordsFromInput = userInput.split(" +"); //accounting for extra spaces between words
         return wordsFromInput;
     }
 }
