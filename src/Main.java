@@ -74,7 +74,7 @@ public class Main {
                             changedInput = remainingInput + consonant + "ay";
                         }
                     }
-                    break;
+                    break;      //break used to exit for loop/if statement once the first vowel is found
                 }
             }
         }
